@@ -68,6 +68,8 @@ namespace LeetCode
             t1.Start();
             //Thread.Sleep(2000);
             //t2.Start();
+
+
             Console.ReadLine();
         }
 
@@ -309,7 +311,7 @@ namespace LeetCode
                 isExchanged = false;
                 for (int j = 0; j < arr.Length - i - 1; j++)//减去已经冒出的个数i，冒出的数已经确定大小
                 {
-                    if (arr[j] > arr[j + 1])
+                    if (arr[j] > arr[j + 1])// 减1，是由于arr[j + 1]
                     {
                         var tep = arr[j];
                         arr[j] = arr[j + 1];
@@ -321,7 +323,7 @@ namespace LeetCode
             return arr;
         }
         public static int[] QuickSort(int[] arr, int low, int high)
-        {
+        {   //整体 --> 局部--> 整体
             if (low >= high) return arr;
 
             int idx = UnitSort(arr, low, high);
@@ -580,5 +582,6 @@ namespace LeetCode
                 return CompareTo(other);
             }
         }
+
     }
 }
